@@ -1,6 +1,6 @@
 ## makeCacheMatrix and cacheSolve are a pair of functions that can
 ## be used to compute the inverse of a given matrix, and cache the
-## the result to avoid repeted calculation.
+## the result to avoid repeating the calculation.
 
 ## makeCacheMatrix creates a list object containing functions to: 
 ## 1. get the matrix
@@ -16,10 +16,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## cacheSolve takes the matrix, x, and simply returns its inverse 
-## if the inverse is cached (as i in makeCacheMatrix). If the inverse 
-## has not been cached (if i is NULL), the function will compute the 
-## inverese and return it.
+## cacheSolve takes the function, x, and simply returns the cached 
+## inverse, i, if i is not NULL. Otherwise cacheSolve will compute 
+## the inverse, cache the value using "setinv(i)", and return it.
 
 cacheSolve <- function(x, ...) {
       i <- x$getinv()
